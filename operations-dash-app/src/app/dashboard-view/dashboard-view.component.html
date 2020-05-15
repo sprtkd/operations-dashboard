@@ -30,6 +30,56 @@
         </mat-card-footer>
       </mat-card>
     </mat-grid-tile>
+    <mat-grid-tile [colspan]="commonsService.smallCols(4)>=2?4:2" [rowspan]="1">
+      <mat-card class="dashboard-card primary-card">
+        <mat-card-header>
+          <mat-card-title>
+            <span class="dash-card-title">
+              Next Hit In
+            </span>
+            <button mat-icon-button class="more-button">
+              <mat-icon>refresh</mat-icon>
+            </button>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div class="dash-card-stats">
+            00:00:06
+            <span class="stat-type">
+
+            </span>
+          </div>
+        </mat-card-content>
+        <mat-divider></mat-divider>
+        <mat-card-footer style="text-align: center; padding-top: 5px;">
+          <h4>
+            After each 15s
+          </h4>
+
+        </mat-card-footer>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="commonsService.smallCols(4)>=2?4:2" [rowspan]="2">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            <span class="dash-card-title">
+              Latest Hits
+            </span>
+            <button mat-icon-button class="more-button">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <canvas baseChart [datasets]="timelineChartUiBasicModel.chartData"
+            [labels]="timelineChartUiBasicModel.chartLabels" [options]="timelineChartUiBasicModel.chartOptions"
+            [colors]="timelineChartUiBasicModel.chartColors" [legend]="timelineChartUiBasicModel.chartLegend"
+            [chartType]="timelineChartUiBasicModel.chartType" [plugins]="timelineChartUiBasicModel.chartPlugins">
+          </canvas>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
   </mat-grid-list>
   <br>
   <h1 class="mat-h1">Service Details</h1>
