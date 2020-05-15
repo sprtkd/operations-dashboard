@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import { CommonService } from '../services/common.service';
 
 @Component({
   selector: 'app-dashboard-view',
@@ -8,26 +8,16 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
   styleUrls: ['./dashboard-view.component.css']
 })
 export class DashboardViewComponent {
-  /** Based on the screen size, switch from standard to one column per row */
-  cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map(({ matches }) => {
-      if (matches) {
-        return [
-          { title: 'Card 1', cols: 1, rows: 1 },
-          { title: 'Card 2', cols: 1, rows: 1 },
-          { title: 'Card 3', cols: 1, rows: 1 },
-          { title: 'Card 4', cols: 1, rows: 1 }
-        ];
-      }
+  basic_stats = [
+    { name: "Services", value: "4/8", type: "Services", footer: "Last updated: 12mins ago", status: "active-card" },
+    { name: "Average Time", value: "552", type: "ms", footer: "Bad", status: "warn-card" },
+    { name: "Uptime", value: "24", type: "%", footer: "In Last 24 hours", status: "danger-card" },
+    { name: "Hits", value: "845/900", type: "hits", footer: "In Last 24 hours", status: "primary-card" }
+  ]
+  constructor(public commonsService: CommonService) {
 
-      return [
-        { title: 'Card 1', cols: 2, rows: 1 },
-        { title: 'Card 2', cols: 1, rows: 1 },
-        { title: 'Card 3', cols: 1, rows: 2 },
-        { title: 'Card 4', cols: 1, rows: 1 }
-      ];
-    })
-  );
+  }
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+
+
 }

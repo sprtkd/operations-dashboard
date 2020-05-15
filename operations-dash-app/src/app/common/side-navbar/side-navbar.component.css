@@ -27,11 +27,11 @@
 .sidenav-box {
     box-shadow: 0px 0 20px 1px rgba(77, 77, 77, 0.582);
     min-width: 250px;
+    padding: 15px;
 }
 
 .title-nav {
-    margin-top: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 .active-link{

@@ -1,24 +1,53 @@
 <div class="grid-container">
-  <h1 class="mat-h1">Dashboard</h1>
-  <mat-grid-list cols="2" rowHeight="350px">
-    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
-      <mat-card class="dashboard-card">
+  <h1 class="mat-h1">Overview</h1>
+  <mat-grid-list cols="4" rowHeight="220px">
+    <mat-grid-tile [colspan]="commonsService.smallCols(4)" [rowspan]="1" *ngFor="let stat of basic_stats">
+      <mat-card class="dashboard-card" [ngClass]="stat.status">
         <mat-card-header>
           <mat-card-title>
-            {{card.title}}
-            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
+            <span class="dash-card-title">
+              {{stat.name}}
+            </span>
+            <button mat-icon-button class="more-button">
+              <mat-icon>refresh</mat-icon>
             </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
-            </mat-menu>
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <div>Card Content Here</div>
+          <div class="dash-card-stats">
+            {{stat.value}}
+            <span class="stat-type">
+              {{stat.type}}
+            </span>
+          </div>
         </mat-card-content>
+        <mat-divider></mat-divider>
+        <mat-card-footer style="text-align: center; padding-top: 5px;">
+          <h4>
+            {{stat.footer}}
+          </h4>
+
+        </mat-card-footer>
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
+  <br>
+  <h1 class="mat-h1">Service Details</h1>
+  <br>
+  <div>
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Personal data
+          </mat-panel-title>
+          <mat-panel-description>
+            Type your name and age
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        hi
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
 </div>

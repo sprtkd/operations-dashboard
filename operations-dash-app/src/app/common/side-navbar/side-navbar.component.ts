@@ -7,6 +7,7 @@ import { MediaMatcher } from '@angular/cdk/layout';
   styleUrls: ['./side-navbar.component.css']
 })
 export class SideNavbarComponent implements OnDestroy, OnInit {
+  companyName: String = "Operations"
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
