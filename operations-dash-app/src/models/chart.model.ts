@@ -43,9 +43,12 @@ export class ChartUiBasicModel {
         multiChartUiBasicModel.chartData = dataset;
         multiChartUiBasicModel.chartLabels = yLabels;
         multiChartUiBasicModel.chartOptions = {
-            responsive: true
+            responsive: true,
+            maintainAspectRatio: false
         };
-        multiChartUiBasicModel.chartColors = [];
+        multiChartUiBasicModel.chartColors = [{
+            backgroundColor: "rgba(255,100,10,0.5)"
+        }];
         multiChartUiBasicModel.chartLegend = true;
         multiChartUiBasicModel.chartPlugins = [];
         multiChartUiBasicModel.chartType = 'line';
@@ -57,9 +60,14 @@ export class ChartUiBasicModel {
         multiChartUiBasicModel.chartData = dataset;
         multiChartUiBasicModel.chartLabels = yLabels;
         multiChartUiBasicModel.chartOptions = {
-            responsive: true
+            responsive: true,
+            maintainAspectRatio: false
         };
-        multiChartUiBasicModel.chartColors = [];
+        multiChartUiBasicModel.chartColors = [
+            {
+                backgroundColor: "rgba(255,100,10,0.5)"
+            }
+        ];
         multiChartUiBasicModel.chartLegend = true;
         multiChartUiBasicModel.chartPlugins = [];
         multiChartUiBasicModel.chartType = 'bar';

@@ -11,14 +11,21 @@
                 </a>
                 <mat-divider></mat-divider>
                 <br>
-                <a mat-list-item routerLink="." routerLinkActive="primary-item active-link">
+                <a mat-list-item class="inactive-link" routerLink="." routerLinkActive="primary-item active-link">
+                    <mat-icon style="margin-right: 5px;">ballot</mat-icon>
                     Overview
                 </a>
-                <a mat-list-item routerLink=".">
-                    Service Details
+                <a mat-list-item class="inactive-link" routerLink=".">
+                    <mat-icon style="margin-right: 5px;">dns</mat-icon>
+                    All Services
                 </a>
-                <a mat-list-item routerLink=".">
+                <a mat-list-item class="inactive-link" routerLink=".">
+                    <mat-icon style="margin-right: 5px;">signal_cellular_alt</mat-icon>
                     Statistics
+                </a>
+                <a mat-list-item class="inactive-link" routerLink=".">
+                    <mat-icon style="margin-right: 5px;">info</mat-icon>
+                    About
                 </a>
             </mat-nav-list>
         </mat-sidenav>
@@ -33,7 +40,7 @@
                     <div matRipple [matRippleRadius]="20" *ngIf="!snav.opened" style="display:inline; cursor: pointer;">
                         <img height="25" width="25" src="assets/logo.png" alt="Company Logo"
                             style="vertical-align:middle">
-                        
+
                         &nbsp;{{companyName}} &nbsp;|&nbsp;
                     </div>
                     <div style="display:inline; color: rgb(139, 138, 136);">

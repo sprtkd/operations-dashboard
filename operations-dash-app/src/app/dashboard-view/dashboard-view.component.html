@@ -1,6 +1,8 @@
 <div class="grid-container">
-  <h1 class="mat-h1">Overview</h1>
-  <mat-grid-list cols="4" rowHeight="220px">
+  <div class="div-header">
+    <mat-icon style="margin-right: 5px; " [inline]="true">ballot</mat-icon>Overview
+  </div>
+  <mat-grid-list cols="4" rowHeight="230px">
     <mat-grid-tile [colspan]="commonsService.smallCols(4)" [rowspan]="1" *ngFor="let stat of basic_stats">
       <mat-card class="dashboard-card" [ngClass]="stat.status">
         <mat-card-header>
@@ -22,7 +24,7 @@
           </div>
         </mat-card-content>
         <mat-divider></mat-divider>
-        <mat-card-footer style="text-align: center; padding-top: 5px;">
+        <mat-card-footer class="dashboard-card-footer">
           <h4>
             {{stat.footer}}
           </h4>
@@ -51,7 +53,7 @@
           </div>
         </mat-card-content>
         <mat-divider></mat-divider>
-        <mat-card-footer style="text-align: center; padding-top: 5px;">
+        <mat-card-footer class="dashboard-card-footer">
           <h4>
             After each 15s
           </h4>
@@ -60,11 +62,11 @@
       </mat-card>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="commonsService.smallCols(4)>=2?4:2" [rowspan]="2">
-      <mat-card class="dashboard-card">
+      <mat-card class="dashboard-card graph-card">
         <mat-card-header>
           <mat-card-title>
             <span class="dash-card-title">
-              Latest Hits
+              Active Services
             </span>
             <button mat-icon-button class="more-button">
               <mat-icon>more_vert</mat-icon>
@@ -72,7 +74,7 @@
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <canvas baseChart [datasets]="timelineChartUiBasicModel.chartData"
+          <canvas baseChart height="300" width="100%" [datasets]="timelineChartUiBasicModel.chartData"
             [labels]="timelineChartUiBasicModel.chartLabels" [options]="timelineChartUiBasicModel.chartOptions"
             [colors]="timelineChartUiBasicModel.chartColors" [legend]="timelineChartUiBasicModel.chartLegend"
             [chartType]="timelineChartUiBasicModel.chartType" [plugins]="timelineChartUiBasicModel.chartPlugins">
@@ -80,24 +82,64 @@
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
+    <mat-grid-tile [colspan]="commonsService.smallCols(4)>=2?4:2" [rowspan]="1">
+      <mat-card class="dashboard-card graph-card">
+        <mat-card-header>
+          <mat-card-title>
+            <span class="dash-card-title">
+              Services RTT
+            </span>
+            <button mat-icon-button class="more-button">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <canvas baseChart height="150" width="100%" [datasets]="averageRTTChartUiBasicModel.chartData"
+            [labels]="averageRTTChartUiBasicModel.chartLabels" [options]="averageRTTChartUiBasicModel.chartOptions"
+            [colors]="averageRTTChartUiBasicModel.chartColors" [legend]="averageRTTChartUiBasicModel.chartLegend"
+            [chartType]="averageRTTChartUiBasicModel.chartType" [plugins]="averageRTTChartUiBasicModel.chartPlugins">
+          </canvas>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
   </mat-grid-list>
   <br>
-  <h1 class="mat-h1">Service Details</h1>
+  <div class="div-header">
+    <mat-icon style="margin-right: 5px; " [inline]="true">dns</mat-icon>All Registered Services
+  </div>
   <br>
   <div>
     <mat-accordion>
-      <mat-expansion-panel>
+      <mat-expansion-panel *ngFor="let endpoint of endpointsList">
         <mat-expansion-panel-header>
           <mat-panel-title>
-            Personal data
+            {{endpoint.name}}
           </mat-panel-title>
           <mat-panel-description>
             Type your name and age
           </mat-panel-description>
         </mat-expansion-panel-header>
-        hi
+        <app-endpoint-detailed></app-endpoint-detailed>
       </mat-expansion-panel>
     </mat-accordion>
+  </div>
+
+  <br>
+  <div class="div-header">
+    <mat-icon style="margin-right: 5px; " [inline]="true">signal_cellular_alt</mat-icon>Statistics and Profiling
+  </div>
+  <br>
+  <div>
+    This is a demo app
+  </div>
+  <br>
+  <div class="div-header">
+    <mat-icon style="margin-right: 5px; " [inline]="true">info</mat-icon>About
+  </div>
+  <br>
+  <div>
+    This is a demo app
   </div>
 
 </div>

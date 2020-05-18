@@ -35,5 +35,10 @@
 }
 
 .active-link{
-    color: white;
+    color: white !important;
+    box-shadow: 0 1px 5px rgba(77, 77, 77, 0.582);
+}
+
+.inactive-link{
+    color: grey;
 }

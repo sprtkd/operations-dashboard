@@ -1,0 +1,11 @@
+.footer-wide {
+    background-color: rgb(54, 54, 54);
+    min-height: 50px;
+    width: 100%;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}

@@ -9,13 +9,13 @@
   left: 15px;
   right: 15px;
   bottom: 15px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.103);
   transition: box-shadow 0.3s ease-in-out;
   border-radius: 10px;
 }
 
 .dashboard-card:hover {
-  box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 8px 10px rgba(0, 0, 0, 0.295);
 }
 
 .more-button {
@@ -26,6 +26,11 @@
 
 .dashboard-card-content {
   text-align: center;
+}
+
+.dashboard-card-footer {
+  text-align: center;
+  padding-top: 10px;
 }
 
 .dash-card-stats {
@@ -59,4 +64,20 @@
 
 .danger-card {
   background: linear-gradient(135deg, #ffd0b0 0%, #ff4d4d 100%);
+}
+
+.graph-card {
+  background: linear-gradient(135deg, #fff8e0 0%, #ffd092 100%);
+}
+
+.div-header {
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0 5px 10px rgb(211, 211, 211);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.329);
 }

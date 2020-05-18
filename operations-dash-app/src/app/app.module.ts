@@ -17,12 +17,18 @@ import { CommonService } from './services/common.service';
 import { ChartsModule } from 'ng2-charts';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { FooterComponent } from './common/footer/footer.component';
+import { EndpointDetailedComponent } from './common/endpoint-detailed/endpoint-detailed.component';
+import { EndpointService } from './services/endpoint.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     SideNavbarComponent,
-    DashboardViewComponent
+    DashboardViewComponent,
+    FooterComponent,
+    EndpointDetailedComponent
   ],
   imports: [
     BrowserModule,
@@ -36,9 +42,10 @@ import { environment } from '../environments/environment';
     MatButtonModule,
     LayoutModule,
     ChartsModule,
+    HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [CommonService],
+  providers: [CommonService, EndpointService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
