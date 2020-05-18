@@ -1,0 +1,59 @@
+.mini-detail-card {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.158);
+    transition: box-shadow 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.mini-detail-card:hover {
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.452);
+}
+
+.mini-card-content {
+    text-align: center;
+}
+
+.mini-card-footer {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.mini-card-stats {
+    font-size: 1.7em;
+    padding-top: 3px;
+    color: rgb(75, 75, 75);
+    font-weight: 800;
+}
+
+.stat-type {
+    font-size: 0.4em;
+}
+
+.mini-card-title {
+    color: rgb(99, 99, 99);
+    font-size: 0.7em;
+}
+
+.active-card {
+    background: linear-gradient(135deg, #d1fa60 0%, #02db4a 100%);
+}
+
+.warn-card {
+    background: linear-gradient(135deg, #ffec95 0%, #f88644 100%);
+}
+
+.primary-card {
+    background: linear-gradient(135deg, #13f1fc 0%, #0470dc 100%);
+}
+
+.danger-card {
+    background: linear-gradient(135deg, #ffd0b0 0%, #ff4d4d 100%);
+}
+
+.graph-card {
+    background: linear-gradient(135deg, #fff8e0 0%, #f7ba6b 100%);
+}

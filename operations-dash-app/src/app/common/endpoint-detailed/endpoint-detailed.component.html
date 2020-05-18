@@ -1,1 +1,13 @@
-<p>endpoint-detailed works!</p>
+<div>
+    <h2>Details:</h2>
+    <br>
+    <mat-grid-list cols="4" rowHeight="125px">
+        <mat-grid-tile [colspan]="commonsService.smallCols(4)" [rowspan]="1" *ngFor="let stat of basic_service_stats">
+            <app-mini-card [cardDetails]="stat"></app-mini-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <br>
+    <div *ngFor="let instance of selectedService.versions">
+        <app-instance-detailed [selectedInstance]="instance"></app-instance-detailed>
+    </div>
+</div>

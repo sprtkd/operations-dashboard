@@ -74,7 +74,7 @@
           </mat-card-title>
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
-          <canvas baseChart height="300" width="100%" [datasets]="timelineChartUiBasicModel.chartData"
+          <canvas baseChart height="350" width="100%" [datasets]="timelineChartUiBasicModel.chartData"
             [labels]="timelineChartUiBasicModel.chartLabels" [options]="timelineChartUiBasicModel.chartOptions"
             [colors]="timelineChartUiBasicModel.chartColors" [legend]="timelineChartUiBasicModel.chartLegend"
             [chartType]="timelineChartUiBasicModel.chartType" [plugins]="timelineChartUiBasicModel.chartPlugins">
@@ -87,7 +87,7 @@
         <mat-card-header>
           <mat-card-title>
             <span class="dash-card-title">
-              Services RTT
+              Latency Timeline
             </span>
             <button mat-icon-button class="more-button">
               <mat-icon>more_vert</mat-icon>
@@ -109,18 +109,24 @@
     <mat-icon style="margin-right: 5px; " [inline]="true">dns</mat-icon>All Registered Services
   </div>
   <br>
-  <div>
+  <div class="services-div">
     <mat-accordion>
       <mat-expansion-panel *ngFor="let endpoint of endpointsList">
         <mat-expansion-panel-header>
           <mat-panel-title>
             {{endpoint.name}}
+            <mat-icon inline style="color: rgb(228, 167, 0);" *ngIf="!endpoint.details.atleastOneActive">warning
+            </mat-icon>
+            <mat-icon inline style="color: rgb(39, 197, 0);" *ngIf="endpoint.details.atleastOneActive">check_circle
+            </mat-icon>
           </mat-panel-title>
-          <mat-panel-description>
-            Type your name and age
+          <mat-panel-description *ngIf="commonsService.smallCols(4)<4">
+            {{endpoint.details.totalVersions}} Instance(s)
+            | Latency: {{endpoint.details.lastHitBestDetails.rtt}}ms
+
           </mat-panel-description>
         </mat-expansion-panel-header>
-        <app-endpoint-detailed></app-endpoint-detailed>
+        <app-endpoint-detailed [selectedService]="endpoint"></app-endpoint-detailed>
       </mat-expansion-panel>
     </mat-accordion>
   </div>
@@ -131,7 +137,7 @@
   </div>
   <br>
   <div>
-    This is a demo app
+    <app-profiling></app-profiling>
   </div>
   <br>
   <div class="div-header">
@@ -139,7 +145,7 @@
   </div>
   <br>
   <div>
-    This is a demo app
+    <app-about></app-about>
   </div>
 
 </div>

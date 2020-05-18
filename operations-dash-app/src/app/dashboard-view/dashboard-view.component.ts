@@ -16,8 +16,8 @@ export class DashboardViewComponent implements OnInit {
   averageRTTChartUiBasicModel: ChartUiBasicModel;
   endpointsList: EndpointModel[];
   basic_stats: BasicStatCard[] = [
-    { name: "Services", value: "4/8", type: "Services", footer: "Last updated: 12mins ago", status: "active-card" },
-    { name: "Average Time", value: "552", type: "ms", footer: "Bad", status: "warn-card" },
+    { name: "Services", value: "4/8", type: "Live", footer: "Last updated: 12mins ago", status: "active-card" },
+    { name: "Latency", value: "552", type: "ms", footer: "Bad", status: "warn-card" },
     { name: "Uptime", value: "24", type: "%", footer: "In Last 24 hours", status: "danger-card" },
     { name: "Hits", value: "845/900", type: "", footer: "In Last 24 hours", status: "primary-card" }
   ]

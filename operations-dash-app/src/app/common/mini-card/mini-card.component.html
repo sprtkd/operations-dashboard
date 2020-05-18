@@ -1,0 +1,17 @@
+<mat-card class="mini-detail-card" [ngClass]="cardDetails.status">
+    <mat-card-header>
+        <mat-card-title>
+            <span class="mini-card-title">
+                {{cardDetails.name}}
+            </span>
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="mini-card-content">
+        <div class="mini-card-stats">
+            {{cardDetails.value}}
+            <span class="stat-type">
+                {{cardDetails.type}}
+            </span>
+        </div>
+    </mat-card-content>
+</mat-card>

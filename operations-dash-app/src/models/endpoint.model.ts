@@ -4,6 +4,7 @@ export class EndpointModel {
     name: string;
     versions: EndpointVersionModel[];
     profiling: ProfilingModel;
+    details: EndpointDetailsModel;
 
     static dummyModelListFactory(numOfEndpoints: number, maxVersions: number): EndpointModel[] {
         const baseDummyApi: string = "https://reqres.in/api/users/";
@@ -23,11 +24,21 @@ export class EndpointModel {
                 let endpointVersionModel: EndpointVersionModel = new EndpointVersionModel();
                 endpointVersionModel.versionName = "v" + (iter2 + 1);
                 endpointVersionModel.url = baseDummyApi + userIndex + "?delay=" + (getRandNum(3) - 1);
-                endpointVersionModel.lastHit = null;
+                endpointVersionModel.lastHitDetails = null;
                 endpointVersionModel.isActive = false;
                 endpointVersionModel.hitHistory = [];
                 endpointModel.versions.push(endpointVersionModel);
+                userIndex += 1;
             }
+
+            endpointModel.details = new EndpointDetailsModel();
+            endpointModel.details.atleastOneActive = false;
+            endpointModel.details.bestUrl = "";
+            endpointModel.details.lastHitBestDetails = new EndpointStatsModel();
+            endpointModel.details.lastHitBestDetails.hitTime = new Date();
+            endpointModel.details.lastHitBestDetails.rtt = 9999;
+            endpointModel.details.totalVersions = endpointModel.versions.length;
+            endpointModel.details.activeVersions = 0;
             endpointModel.profiling = new ProfilingModel();
             endpointModel.profiling.lastDailyUptimePercentage = 0;
             endpointModel.profiling.upTimePercentageHistory = [];
@@ -45,8 +56,16 @@ export class EndpointVersionModel {
     versionName: string;
     url: string;
     isActive: boolean;
-    lastHit: EndpointStatsModel;
+    lastHitDetails: EndpointStatsModel;
     hitHistory: EndpointStatsModel[]
+}
+
+export class EndpointDetailsModel {
+    totalVersions: number;
+    activeVersions: number;
+    bestUrl: string;
+    atleastOneActive: boolean;
+    lastHitBestDetails: EndpointStatsModel;
 }
 
 export class EndpointStatsModel {

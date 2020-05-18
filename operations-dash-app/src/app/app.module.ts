@@ -21,6 +21,10 @@ import { FooterComponent } from './common/footer/footer.component';
 import { EndpointDetailedComponent } from './common/endpoint-detailed/endpoint-detailed.component';
 import { EndpointService } from './services/endpoint.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AboutComponent } from './common/about/about.component';
+import { ProfilingComponent } from './common/profiling/profiling.component';
+import { InstanceDetailedComponent } from './common/instance-detailed/instance-detailed.component';
+import { MiniCardComponent } from './common/mini-card/mini-card.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,11 @@ import { HttpClientModule } from '@angular/common/http';
     SideNavbarComponent,
     DashboardViewComponent,
     FooterComponent,
-    EndpointDetailedComponent
+    EndpointDetailedComponent,
+    AboutComponent,
+    ProfilingComponent,
+    InstanceDetailedComponent,
+    MiniCardComponent
   ],
   imports: [
     BrowserModule,
