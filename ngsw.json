@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1589561548945,
+  "timestamp": 1589824379560,
   "index": "https://sprtkd.github.io/operations-dashboard/index.html",
   "assetGroups": [
     {
@@ -10,8 +10,8 @@
       "urls": [
         "https://sprtkd.github.io/operations-dashboard/favicon.ico",
         "https://sprtkd.github.io/operations-dashboard/index.html",
-        "https://sprtkd.github.io/operations-dashboard/main-es2015.7c74d437eeb8e3001407.js",
-        "https://sprtkd.github.io/operations-dashboard/main-es5.7c74d437eeb8e3001407.js",
+        "https://sprtkd.github.io/operations-dashboard/main-es2015.1380fda94d75d1433532.js",
+        "https://sprtkd.github.io/operations-dashboard/main-es5.1380fda94d75d1433532.js",
         "https://sprtkd.github.io/operations-dashboard/manifest.webmanifest",
         "https://sprtkd.github.io/operations-dashboard/polyfills-es2015.690002c25ea8557bb4b0.js",
         "https://sprtkd.github.io/operations-dashboard/polyfills-es5.9e286f6d9247438cbb02.js",
@@ -51,9 +51,9 @@
     "https://sprtkd.github.io/operations-dashboard/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "https://sprtkd.github.io/operations-dashboard/assets/logo.png": "fe62e1769f3b64ce2e0e302c97e7c31dae816757",
     "https://sprtkd.github.io/operations-dashboard/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "https://sprtkd.github.io/operations-dashboard/index.html": "66d095627752c822057a9a5729a1f6891c8804db",
-    "https://sprtkd.github.io/operations-dashboard/main-es2015.7c74d437eeb8e3001407.js": "0e5c1ae5445929d0fef1df4feff241ec01c43250",
-    "https://sprtkd.github.io/operations-dashboard/main-es5.7c74d437eeb8e3001407.js": "787d69efcc2793752de0b2ef83039216d3e3122f",
+    "https://sprtkd.github.io/operations-dashboard/index.html": "c130417d4aee4f995155361f27af074cfb82dda9",
+    "https://sprtkd.github.io/operations-dashboard/main-es2015.1380fda94d75d1433532.js": "732338571487e8d8bf733367e79ff62e6868e927",
+    "https://sprtkd.github.io/operations-dashboard/main-es5.1380fda94d75d1433532.js": "2bf26b60cc7f24bab8e26baad225f82a3822c41a",
     "https://sprtkd.github.io/operations-dashboard/manifest.webmanifest": "e0ce8651ca2192064776ba4ea20ba3a59f31ac09",
     "https://sprtkd.github.io/operations-dashboard/polyfills-es2015.690002c25ea8557bb4b0.js": "72ad4ccc0a3916ae4598199447cdeadd6d380570",
     "https://sprtkd.github.io/operations-dashboard/polyfills-es5.9e286f6d9247438cbb02.js": "89222a28dbabb780fc372d33834080e0cd3083d9",
